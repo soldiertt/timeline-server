@@ -12,9 +12,11 @@ export default function () {
     let app = express(),
         server = http.createServer(app);
 
+    process.env.NODE_IP = process.env.NODE_IP || "localhost";
+
     if (process.env.NODE_ENV === "development") {
         var corsOptions = {
-            origin: 'http://localhost:4200'
+            origin: 'http://' + process.env.NODE_IP + ':4200'
         };
         app.use(morgan("dev"));
         app.use(cors(corsOptions));
