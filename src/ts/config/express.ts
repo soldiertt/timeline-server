@@ -12,11 +12,11 @@ export default function () {
     let app = express(),
         server = http.createServer(app);
 
-    process.env.NODE_IP = process.env.NODE_IP || "localhost";
+    let appHost = process.env.NODE_IP || "localhost";
 
     // CORS CONFIG
-    var corsOptions = {
-        origin: 'http://' + process.env.NODE_IP + ':4200'
+    let corsOptions = {
+        origin: 'http://' + appHost + ':4200'
     };
     app.use(cors(corsOptions));
 

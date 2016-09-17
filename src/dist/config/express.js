@@ -10,10 +10,10 @@ var cors = require("cors");
 var timeevent_srv_route_1 = require("../routes/timeevent.srv.route");
 function default_1() {
     var app = express(), server = http.createServer(app);
-    process.env.NODE_IP = process.env.NODE_IP || "localhost";
+    var appHost = process.env.NODE_IP || "localhost";
     // CORS CONFIG
     var corsOptions = {
-        origin: 'http://' + process.env.NODE_IP + ':4200'
+        origin: 'http://' + appHost + ':4200'
     };
     app.use(cors(corsOptions));
     if (process.env.NODE_ENV === "development") {
