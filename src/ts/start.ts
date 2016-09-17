@@ -41,7 +41,7 @@ if (cluster.isMaster) {
   }
 } else {
 
-  let port = process.env.NODE_PORT || 3000,
+  let port = process.env.NODE_PORT || 3200,
       ipaddress = process.env.NODE_IP || "0.0.0.0";
   app.listen(port, ipaddress);
   console.log("Server running at http://" + ipaddress + ":" + port + "/");
